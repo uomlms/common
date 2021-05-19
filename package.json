@@ -9,7 +9,9 @@
   ],
   "scripts": {
     "clean": "del ./build/*",
-    "build": "tsc"
+    "build": "tsc",
+    "pub": "npm run build && npm publish",
+    "pub-patch": "npm version patch && npm run pub"
   },
   "keywords": [],
   "author": "Orestis Rafail Nerantzis",
