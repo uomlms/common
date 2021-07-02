@@ -13,3 +13,4 @@ export * from './middlewares/validate-request';
 export * from './kafka/consumer';
 export * from './kafka/producer';
 export * from './kafka/topics';
+export * from './kafka/kafka';
