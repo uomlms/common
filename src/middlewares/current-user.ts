@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 interface UserPayload {
   id: string,
   email: string;
+  role: string;
 }
 
 // declares an extra attribute to Request Object
