@@ -1,7 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
 import { NotAuthorizedError } from '../errors/not-authorized-error';
 
-const requireAuth = (roles: string[] = []) => {
+/**
+ * Middleware to check if the user is authenticated.
+ * If roles are provided, then checks if the user role is included.
+ * 
+ * @param roles 
+ */
+const requireAuth = (...roles: string[]) => {
   return (req: Request, res: Response, next: NextFunction) => {
     if (!req.currentUser) {
       throw new NotAuthorizedError();
