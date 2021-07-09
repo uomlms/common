@@ -16,6 +16,22 @@ export const errorHandler = (
 
   console.error(err);
 
+  // Mongoose bad ObjectId
+  if (err.name === "CastError") {
+    const message = `Resource not found with id of ${err.value}`;
+    return res.status(400).send({
+      errors: [{ message }]
+    });
+  }
+
+  //Mongoose dublicate key
+  if (err.code === 11000) {
+    const message = "Dublicate field value entered.";
+    return res.status(400).send({
+      errors: [{ message }]
+    });
+  }
+
   // Mongoose validation error
   if (err.name === "ValidationError") {
     const message = Object.values(err.errors).map((error: any) => {
@@ -25,6 +41,7 @@ export const errorHandler = (
       errors: message
     });
   }
+
   res.status(400).send({
     errors: [{ message: 'Something went wrong' }]
   });
