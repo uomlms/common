@@ -14,3 +14,5 @@ export * from './kafka/consumer';
 export * from './kafka/producer';
 export * from './kafka/topics';
 export * from './kafka/kafka';
+
+export * from './kafka/events/assignment-submit-event';
