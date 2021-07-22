@@ -4,8 +4,8 @@ export interface AssignmentSubmitEvent {
   topic: Topics.AssignmentSubmitTopic;
   data: {
     assignmentId: string;
-    config: string;
-    sourceCode: string;
+    configFile?: string;
+    sourceFile?: string;
     userId: string;
   }
 }
