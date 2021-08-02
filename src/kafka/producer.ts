@@ -12,6 +12,10 @@ export abstract class Producer<T extends Event> {
 
   constructor(producer: KafkaProducer) {
     this.producer = producer;
+
+    this.producer.on('event.error', (err) => {
+      console.error('Error from producer', err)
+    });
   }
 
   produce(data: T['data']) {
