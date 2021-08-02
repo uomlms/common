@@ -18,7 +18,13 @@ export abstract class Producer<T extends Event> {
     this.producer.produce(
       this.topic,
       null,
-      this.parseData(data)
+      this.parseData(data),
+      null,
+      Date.now(),
+      (err: Error, offset: any) => {
+        if (err) { console.log(err); return; }
+        console.log("Offset: " + offset);
+      }
     );
   }
 
