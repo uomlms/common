@@ -19,6 +19,7 @@ export abstract class Producer<T extends Event> {
   }
 
   produce(data: T['data']) {
+    console.log("Producing Data: ", data);
     this.producer.produce(
       this.topic,
       null,
