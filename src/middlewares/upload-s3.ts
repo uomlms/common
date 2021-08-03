@@ -25,7 +25,6 @@ export const uploadS3 = (params: UploadS3ParametersInterface) => {
     storage: multerS3({
       s3,
       bucket,
-      contentType: multerS3.AUTO_CONTENT_TYPE,
       metadata: function (req: Request, file, cb) {
         cb(null, { fieldName: file.fieldname });
       },
