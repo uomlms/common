@@ -6,8 +6,11 @@ enum AssignmentSubmitType {
 }
 
 export interface AssignmentCorrectionEvent {
-    assignmentId: string;
-    userId: string;
-    status: AssignmentSubmitType;
-    result: string;
+    topic: Topics.AssignmentCorrectionTopic,
+    data: {
+        assignmentId: string;
+        userId: string;
+        status: AssignmentSubmitType;
+        result: string;
+    }
 }
