@@ -1,3 +1,4 @@
 export enum Topics {
-  AssignmentSubmitTopic = 'assignmentSubmitTopic'
+  AssignmentSubmitTopic = 'assignmentSubmitTopic',
+  AssignmentCorrectTopic = 'assignmentCorrectTopic'
 }
