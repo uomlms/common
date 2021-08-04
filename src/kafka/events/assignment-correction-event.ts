@@ -6,7 +6,7 @@ enum AssignmentSubmitType {
 }
 
 export interface AssignmentCorrectionEvent {
-    topic: Topics.AssignmentCorrectionTopic,
+    topic: Topics.AssignmentCorrectionTopic;
     data: {
         assignmentId: string;
         userId: string;
