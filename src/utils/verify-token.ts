@@ -5,6 +5,7 @@ interface UserPayload {
   id: string,
   email: string;
   role: string;
+  token: string;
 }
 
 const verifyToken = (token: string) => {
@@ -13,6 +14,7 @@ const verifyToken = (token: string) => {
       token,
       process.env.JWT_SECRET!
     ) as UserPayload;
+    payload.token = token;
     return payload;
   } catch (err) { }
 }
