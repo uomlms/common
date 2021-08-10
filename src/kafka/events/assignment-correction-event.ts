@@ -5,7 +5,6 @@ export interface AssignmentCorrectionEvent {
     data: {
         assignmentId: string;
         submissionId: string;
-        userId: string;
         status: string;
         result: string;
     }
