@@ -7,6 +7,9 @@ export interface AssignmentSubmitEvent {
     submissionId: string;
     configFile?: string;
     sourceFile?: string;
-    userId: string;
+    user: {
+      token: string,
+      extra?: any
+    }
   }
 }
