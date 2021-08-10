@@ -1,12 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-
-// defines the payload of the user
-interface UserPayload {
-  id: string,
-  email: string;
-  role: string;
-}
+import { verifyToken, UserPayload } from '../utils/verify-token';
 
 // declares an extra attribute to Request Object
 declare global {
@@ -27,13 +21,6 @@ export const currentUser = (
     return next();
   }
 
-  try {
-    const payload = jwt.verify(
-      req.session.jwt,
-      process.env.JWT_SECRET!
-    ) as UserPayload;
-    req.currentUser = payload;
-  } catch (err) { }
-
+  req.currentUser = verifyToken(req.session.jwt);
   next();
 }
