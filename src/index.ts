@@ -18,3 +18,4 @@ export * from './kafka/kafka';
 
 export * from './kafka/events/assignment-submit-event';
 export * from './kafka/events/assignment-correction-event';
+export * from './kafka/events/send-mail-event';
