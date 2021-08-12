@@ -21,3 +21,4 @@ export * from './kafka/events/assignment-correction-event';
 export * from './kafka/events/send-mail-event';
 
 export * from './utils/verify-token';
+export * from './utils/aws-s3';
